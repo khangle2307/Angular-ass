@@ -1,0 +1,14 @@
+<div class="flex justify-around p-4">
+   <div *ngFor="let item of products">
+      <div class="bg-white shadow-md rounded">
+         <div>
+            <a [routerLink]="['/detailProduct',item.id]">
+               <img [src]="item.img" width="150px" alt="">
+            </a>
+         </div>
+         <a [routerLink]="['/detailProduct',item.id]" class="text-lg font-bold text-black no-underline">{{
+            item.name}}</a>
+         <p>{{item.price}} đ</p>
+      </div>
+   </div>
+</div>

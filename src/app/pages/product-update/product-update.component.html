@@ -1,0 +1,30 @@
+<div class="m-4">
+  <h1 class="mt-3">Update Product</h1>
+
+  {{product | json}}
+
+  <form nz-form [nzLayout]="'vertical'" #formAdd="ngForm" (ngSubmit)="onSubmit()">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="4">Name</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" name="name" [(ngModel)]="product.name" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="4">price</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-input-number nz-input [nzMin]="1" name="price" [(ngModel)]="product.price"></nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="4">Image</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" name="img" [(ngModel)]="product.img" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-space>
+      <button nz-button [nzType]="'primary'" *nzSpaceItem>Update</button>
+      <a nz-button [nzType]="'text'" routerLink="/products" *nzSpaceItem>Back</a>
+    </nz-space>
+  </form>
+</div>
